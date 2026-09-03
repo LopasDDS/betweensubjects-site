@@ -1,0 +1,45 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Authorisation callback — Between Subjects</title>
+<link rel="stylesheet" href="style.css">
+<main>
+  <h1>Authorisation callback</h1>
+  <p class="sub">This page is the redirect target for the Between Subjects publishing tool.</p>
+
+  <div id="ok" hidden>
+    <p>Copy the whole line below and paste it into the terminal where
+       <code>oauth_tiktok.py</code> is waiting.</p>
+    <p><textarea id="url" readonly rows="4"
+         style="width:100%;background:#0d1116;color:#f0ebe1;border:1px solid #2a323c;
+                border-radius:6px;padding:.7rem;font-family:ui-monospace,Menlo,Consolas,monospace;
+                font-size:.85rem"></textarea></p>
+    <p><button id="copy"
+         style="background:#c98b3e;color:#12161b;border:0;border-radius:6px;
+                padding:.6rem 1.1rem;font-size:.95rem;cursor:pointer">Copy</button>
+       <span id="done" style="margin-left:.8rem;color:#9aa3ad"></span></p>
+  </div>
+
+  <div id="none" hidden>
+    <p>No authorisation code in this URL. Start the flow from the terminal with
+       <code>python scripts/oauth_tiktok.py</code>.</p>
+  </div>
+
+  <footer>Between Subjects</footer>
+</main>
+<script>
+  (function () {
+    var has = new URLSearchParams(location.search).get("code");
+    document.getElementById(has ? "ok" : "none").hidden = false;
+    if (!has) return;
+    var box = document.getElementById("url");
+    box.value = location.href;
+    document.getElementById("copy").addEventListener("click", function () {
+      box.select();
+      navigator.clipboard.writeText(box.value).then(
+        function () { document.getElementById("done").textContent = "copied"; },
+        function () { document.getElementById("done").textContent = "select it and copy manually"; }
+      );
+    });
+  })();
+</script>
