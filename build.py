@@ -28,7 +28,21 @@ TAGLINE = "What the famous psychology studies actually found."
 CONTACT = "allaboutfrankel@gmail.com"
 
 YOUTUBE_CHANNEL = "https://www.youtube.com/@betweensubjects"
+TIKTOK_PROFILE = "https://www.tiktok.com/@between_subjects"
 FACEBOOK_PAGE = "https://www.facebook.com/1219727847900870"
+
+CHANNELS = (
+    ("YouTube", YOUTUBE_CHANNEL),
+    ("TikTok", TIKTOK_PROFILE),
+    ("Facebook", FACEBOOK_PAGE),
+)
+
+
+def channel_links() -> str:
+    pills = "".join(
+        f'<a class="pill" href="{url}" rel="noopener">{label}</a>' for label, url in CHANNELS
+    )
+    return f'<p class="watch">{pills}</p>'
 
 PLATFORM_LABELS = {"youtube": "YouTube", "tiktok": "TikTok", "facebook": "Facebook"}
 
@@ -253,10 +267,7 @@ def build_home(episodes: list[dict], notes: dict) -> str:
      the well-known studies actually found, and where the popular retelling
      departs from the record. The Stanford prison guards, Milgram&rsquo;s fourth
      prod, the Dunning-Kruger chart that is not in the Dunning-Kruger paper.</p>
-  <p class="watch">
-    <a class="pill" href="{YOUTUBE_CHANNEL}" rel="noopener">YouTube</a>
-    <a class="pill" href="{FACEBOOK_PAGE}" rel="noopener">Facebook</a>
-  </p>
+  {channel_links()}
 </section>
 
 <section>
@@ -356,10 +367,7 @@ def build_about(episodes: list[dict]) -> str:
    Every one of them has a page here with its sources and its limits.</p>
 
 <h2>Where to watch</h2>
-<p class="watch">
-  <a class="pill" href="{YOUTUBE_CHANNEL}" rel="noopener">YouTube</a>
-  <a class="pill" href="{FACEBOOK_PAGE}" rel="noopener">Facebook</a>
-</p>
+{channel_links()}
 
 <h2>Contact</h2>
 <p>Corrections, questions and requests: <a href="mailto:{CONTACT}">{CONTACT}</a>.
