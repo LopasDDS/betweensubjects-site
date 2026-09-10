@@ -1,15 +1,144 @@
-:root { --ink:#12161b; --bone:#f0ebe1; --amber:#c98b3e; --muted:#9aa3ad; }
-* { box-sizing:border-box; }
-body { margin:0; padding:3rem 1.25rem 5rem; background:var(--ink); color:var(--bone);
-  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-main { max-width:44rem; margin:0 auto; }
-h1 { font-size:1.6rem; letter-spacing:.01em; margin:0 0 .4rem; }
-h2 { font-size:1.05rem; margin:2.2rem 0 .5rem; color:var(--amber); }
-.sub { color:var(--muted); margin:0 0 2.5rem; font-size:.92rem; }
-a { color:var(--amber); }
-ul { padding-left:1.2rem; }
-li { margin:.35rem 0; }
-nav { margin-bottom:2.5rem; font-size:.92rem; }
-nav a { margin-right:1.2rem; }
-footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid #2a323c;
-  color:var(--muted); font-size:.85rem; }
+:root {
+  --ink: #12161b;
+  --panel: #171d24;
+  --line: #2a323c;
+  --bone: #f0ebe1;
+  --amber: #c98b3e;
+  --muted: #98a2ae;
+  --measure: 46rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--bone);
+  font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+a { color: var(--amber); }
+a:hover { color: #e0a95c; }
+
+/* ---- header and footer ------------------------------------------------ */
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem 2rem;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 1.6rem 1.25rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+header.site .brand {
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: .01em;
+  color: var(--bone);
+  text-decoration: none;
+}
+
+header.site nav { display: flex; gap: 1.15rem; font-size: .9rem; margin: 0; }
+header.site nav a { color: var(--muted); text-decoration: none; margin: 0; }
+header.site nav a:hover { color: var(--amber); }
+
+footer.site {
+  max-width: var(--measure);
+  margin: 4rem auto 0;
+  padding: 1.5rem 1.25rem 4rem;
+  border-top: 1px solid var(--line);
+  font-size: .87rem;
+  color: var(--muted);
+}
+footer.site p { margin: .45rem 0; }
+footer.site strong { color: var(--bone); }
+footer.site .links { display: flex; flex-wrap: wrap; gap: 1.1rem; margin: .8rem 0; }
+
+/* ---- main -------------------------------------------------------------- */
+
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2.6rem 1.25rem 0;
+}
+
+h1 { font-size: 1.75rem; line-height: 1.25; letter-spacing: .01em; margin: 0 0 .5rem; }
+h2 { font-size: 1.12rem; margin: 2.6rem 0 .6rem; color: var(--amber); }
+h3 { font-size: .96rem; margin: 1.8rem 0 .35rem; color: var(--bone); letter-spacing: .02em; }
+p { margin: 0 0 1.05rem; }
+
+.sub { color: var(--muted); font-size: .93rem; margin: 0 0 1.6rem; }
+.lede { font-size: 1.14rem; color: var(--bone); margin: 0 0 1.4rem; }
+.muted { color: var(--muted); }
+.crumb { font-size: .87rem; margin: 0 0 1.4rem; }
+.date { color: var(--muted); font-size: .84rem; margin: 0 0 .5rem; }
+
+ul { padding-left: 1.2rem; }
+li { margin: .35rem 0; }
+
+section { margin-bottom: 1rem; }
+.hero { padding-bottom: .5rem; }
+.hero h1 { font-size: 2.05rem; }
+
+/* ---- watch links ------------------------------------------------------- */
+
+.watch { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.2rem 0 1.6rem; }
+
+.pill {
+  display: inline-block;
+  padding: .34rem .82rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .85rem;
+  text-decoration: none;
+  color: var(--bone);
+  background: var(--panel);
+}
+.pill:hover { border-color: var(--amber); color: var(--amber); }
+.watch.small .pill { font-size: .8rem; padding: .26rem .7rem; }
+
+/* ---- cards ------------------------------------------------------------- */
+
+ul.cards { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+
+.card {
+  padding: 1.3rem 0;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+.card h2, .card h3 { margin: 0 0 .3rem; color: var(--bone); font-size: 1.05rem; line-height: 1.35; }
+.card h2 a, .card h3 a { color: var(--bone); text-decoration: none; }
+.card h2 a:hover, .card h3 a:hover { color: var(--amber); }
+.card p { margin: 0 0 .6rem; color: var(--muted); font-size: .93rem; }
+.card .watch { margin: .7rem 0 0; }
+
+/* ---- episode page ------------------------------------------------------ */
+
+blockquote.summary {
+  margin: 1.6rem 0 2rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--panel);
+  border-left: 2px solid var(--amber);
+  border-radius: 0 4px 4px 0;
+}
+blockquote.summary p { margin: 0; font-size: 1.04rem; }
+
+.note {
+  color: var(--muted);
+  font-size: .89rem;
+  border-left: 1px solid var(--line);
+  padding-left: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.notes p { color: #ded8ce; }
+.notes h3 { color: var(--amber); }
+
+@media (max-width: 34rem) {
+  .hero h1 { font-size: 1.65rem; }
+  h1 { font-size: 1.45rem; }
+  header.site { gap: .6rem 1.4rem; }
+}
