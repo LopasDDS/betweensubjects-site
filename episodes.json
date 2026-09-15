@@ -238,5 +238,49 @@
       "facebook": "https://www.facebook.com/2664065054041991"
     },
     "published": "2026-09-11"
+  },
+  {
+    "item": 25,
+    "slug": "skinner-pigeons",
+    "angle": "Skinner's 1948 'superstitious pigeon' study is quoted as evidence for how human superstition works, but a 1971 replication by Staddon and Simmelhag recorded the whole interval instead of just the moment of delivery and found the birds' movements converged rather than staying idiosyncratic — interim behaviour early in the gap, pecking as delivery approached — which looks less like accident amplified into ritual and more like a food-anticipation sequence pigeons already had; nobody disputes the birds did those movements, the argument is about what they meant, and it is still live.",
+    "title": "Skinner's superstitious pigeons: what the 1971 rerun saw",
+    "links": {
+      "youtube": "https://www.youtube.com/watch?v=wrwoZOg0sao",
+      "tiktok": "https://www.tiktok.com/@between_subjects/video/7684578695306054934"
+    },
+    "published": "2026-09-12"
+  },
+  {
+    "item": 26,
+    "slug": "alex-the-parrot",
+    "angle": "The sentence everyone quotes as Alex the grey parrot's farewell was simply what he said to Irene Pepperberg every night when she left the lab — and the quieter, better story is the thirty years of controlled testing behind it, where he labelled colours, shapes and numbers for questioners who had not trained him, and once used \"none\" to report an absence nobody had taught him to name.",
+    "title": "Alex the Parrot's Last Words Weren't a Goodbye",
+    "links": {
+      "youtube": "https://www.youtube.com/watch?v=lYQqhON_19M",
+      "tiktok": "https://www.tiktok.com/@between_subjects/video/7684665688778378498"
+    },
+    "published": "2026-09-12"
+  },
+  {
+    "item": 27,
+    "slug": "tolman-rats",
+    "angle": "Tolman and Honzik's 1930 rats performed almost perfectly the day after reward arrived — real data that still needs explaining — but the textbook retelling turns an unresolved stalemate with Hull and Guthrie into a clean victory over behaviourism, and quietly omits that errors also fell in the group that was never fed at all and that the 1946 short-cut study the phrase 'cognitive map' comes from could not be replicated.",
+    "title": "Tolman's rats: the latent learning story textbooks trim",
+    "links": {
+      "youtube": "https://www.youtube.com/watch?v=YGlW9zY8EWc",
+      "tiktok": "https://www.tiktok.com/@between_subjects/video/7685017472507923715"
+    },
+    "published": "2026-09-13"
+  },
+  {
+    "item": 28,
+    "slug": "washoe-signing",
+    "angle": "Herbert Terrace set out to prove apes build sentences, found statistical structure in over nineteen thousand of Nim Chimpsky's multi-sign utterances, and then discovered on the videotapes that most were prompted by what the teacher had signed seconds earlier — so he published the refutation of his own project in Science in 1979, while the underlying fact that chimps like Washoe genuinely learned hundreds of signs to name and request survived intact.",
+    "title": "He set out to prove apes build sentences. Then the tapes.",
+    "links": {
+      "youtube": "https://www.youtube.com/watch?v=uk_v6bwSDP4",
+      "tiktok": "https://www.tiktok.com/@between_subjects/video/7685386296587586838"
+    },
+    "published": "2026-09-14"
   }
 ]
