@@ -171,9 +171,15 @@ def page(title: str, description: str, body: str, depth: int = 0) -> str:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(description)}">
+<link rel="icon" type="image/svg+xml" href="{up}icon.svg">
+<link rel="alternate icon" type="image/png" href="{up}icon-1024.png">
+<link rel="apple-touch-icon" href="{up}icon-1024.png">
+<meta property="og:title" content="{html.escape(title)}">
+<meta property="og:description" content="{html.escape(description)}">
+<meta property="og:image" content="{BASE_URL}icon-1024.png">
 <link rel="stylesheet" href="{up}style.css">
 <header class="site">
-  <a class="brand" href="{up}index.html">{SITE_NAME}</a>
+  <a class="brand" href="{up}index.html"><img class="mark" src="{up}icon.svg" width="28" height="28" alt="">{SITE_NAME}</a>
   <nav>{nav}</nav>
 </header>
 <main>

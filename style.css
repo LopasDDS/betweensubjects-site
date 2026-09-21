@@ -39,6 +39,16 @@ header.site .brand {
   letter-spacing: .01em;
   color: var(--bone);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+}
+
+header.site .brand .mark {
+  width: 1.55em;
+  height: 1.55em;
+  border-radius: 4px;
+  display: block;
 }
 
 header.site nav { display: flex; gap: 1.15rem; font-size: .9rem; margin: 0; }
