@@ -315,5 +315,16 @@
       "tiktok": "https://www.tiktok.com/@between_subjects/video/7687864121559223574"
     },
     "published": "2026-09-21"
+  },
+  {
+    "item": 32,
+    "slug": "hawthorne-effect",
+    "angle": "The Hawthorne illumination study — the origin of \"people work harder when watched\" — was described for eighty years by people who had never seen its data; when Levitt and List found the original records in 2011 they concluded the famous rising-after-every-change pattern was entirely fictional, with output tracking the day of the week and the pay cycle instead, leaving only a much smaller reactivity effect and a much bigger lesson about how a tidy conclusion gets named, taught and never rechecked.",
+    "title": "The Hawthorne data nobody looked at for eighty years",
+    "links": {
+      "youtube": "https://www.youtube.com/watch?v=JJPt2NdDO34",
+      "tiktok": "https://www.tiktok.com/@between_subjects/video/7687927803131579651"
+    },
+    "published": "2026-09-21"
   }
 ]
