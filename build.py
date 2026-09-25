@@ -24,7 +24,7 @@ EPISODES_DIR = ROOT / "episodes"
 
 BASE_URL = "https://lopasdds.github.io/betweensubjects-site/"
 SITE_NAME = "Between Subjects"
-TAGLINE = "What the famous psychology studies actually found."
+TAGLINE = "What the famous studies actually found."
 CONTACT = "allaboutfrankel@gmail.com"
 
 YOUTUBE_CHANNEL = "https://www.youtube.com/@betweensubjects"
@@ -269,10 +269,11 @@ def build_home(episodes: list[dict], notes: dict) -> str:
 <section class="hero">
   <h1>{SITE_NAME}</h1>
   <p class="lede">{html.escape(TAGLINE)}</p>
-  <p>Short videos about psychology and behavioural science research &mdash; what
-     the well-known studies actually found, and where the popular retelling
-     departs from the record. The Stanford prison guards, Milgram&rsquo;s fourth
-     prod, the Dunning-Kruger chart that is not in the Dunning-Kruger paper.</p>
+  <p>Short videos about psychology, behavioural science and animal cognition
+     &mdash; what the well-known studies actually found, and where the popular
+     retelling departs from the record. Milgram&rsquo;s fourth prod, the
+     Dunning-Kruger chart that is not in the Dunning-Kruger paper, the biologist
+     who spent twenty years trying to unpublish &ldquo;alpha wolf&rdquo;.</p>
   {channel_links()}
 </section>
 
@@ -363,7 +364,8 @@ def build_about(episodes: list[dict]) -> str:
 <p class="sub">{html.escape(TAGLINE)}</p>
 
 <p>{SITE_NAME} is a small independent channel publishing short videos on
-   psychology and behavioural science. It takes its name from the experimental
+   psychology, behavioural science and animal cognition. It takes its name from
+   the experimental
    design where each participant sees only one condition &mdash; you compare
    between subjects, never within one.</p>
 
