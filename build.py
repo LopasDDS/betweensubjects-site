@@ -47,6 +47,11 @@ def channel_links() -> str:
 
 PLATFORM_LABELS = {"youtube": "YouTube", "tiktok": "TikTok", "facebook": "Facebook"}
 
+#: Platforms the site no longer sends readers to. The episodes really were
+#: posted there and `episodes.json` still carries the permalinks, so this is a
+#: display choice rather than a rewrite of the record.
+HIDDEN_PLATFORMS = {"facebook"}
+
 #: Paragraphs in the notes begin with a lead-in that names the section. They
 #: are written as instructions to the person drafting the script, which is what
 #: they are — so a few are relabelled for a reader, and the rest stand as they
@@ -144,7 +149,7 @@ def watch_links(links: dict[str, str], classes: str = "watch") -> str:
         f'<a class="pill" href="{html.escape(url)}" rel="noopener">'
         f"Watch on {PLATFORM_LABELS.get(key, key.title())}</a>"
         for key, url in sorted(links.items())
-        if url
+        if url and key not in HIDDEN_PLATFORMS
     ]
     return f'<p class="{classes}">' + "".join(items) + "</p>"
 
