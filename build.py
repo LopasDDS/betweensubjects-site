@@ -29,12 +29,13 @@ CONTACT = "allaboutfrankel@gmail.com"
 
 YOUTUBE_CHANNEL = "https://www.youtube.com/@betweensubjects"
 TIKTOK_PROFILE = "https://www.tiktok.com/@between_subjects"
-FACEBOOK_PAGE = "https://www.facebook.com/1219727847900870"
 
+#: Facebook was dropped in September 2026 - 58 views across 20 posts - so it is
+#: no longer offered as a place to follow. Episodes that did go out there keep
+#: their links, because those posts exist and this site is the record of them.
 CHANNELS = (
     ("YouTube", YOUTUBE_CHANNEL),
     ("TikTok", TIKTOK_PROFILE),
-    ("Facebook", FACEBOOK_PAGE),
 )
 
 
@@ -371,7 +372,7 @@ def build_about(episodes: list[dict]) -> str:
 
 <p>The channel covers the studies everyone has heard of, and the gap between
    what they found and what they are quoted as finding. There are
-   {len(episodes)} episodes so far, published to YouTube, TikTok and Facebook.
+   {len(episodes)} episodes so far, published to YouTube and TikTok.
    Every one of them has a page here with its sources and its limits.</p>
 
 <h2>Where to watch</h2>
