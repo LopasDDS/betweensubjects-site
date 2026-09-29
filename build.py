@@ -237,7 +237,7 @@ def build_episode(ep: dict, notes: dict) -> str:
     return page(f"{ep['title']} — {SITE_NAME}", summarise(summary), body, depth=1)
 
 
-def build_episode_index(episodes: list[dict], notes: dict) -> str:
+def _episode_cards(episodes: list[dict], notes: dict) -> str:
     cards = []
     for ep in reversed(episodes):
         _, summary, _ = notes[ep["slug"]]
@@ -249,12 +249,30 @@ def build_episode_index(episodes: list[dict], notes: dict) -> str:
   {watch_links(ep["links"], "watch small")}
 </li>"""
         )
+    return "".join(cards)
+
+
+def build_episode_index(episodes: list[dict], notes: dict) -> str:
+    # An episode whose video is no longer public still has a page worth reading,
+    # but it must not sit in the same list as the ones you can watch - a card
+    # with no link and no explanation reads as a broken page.
+    live = [ep for ep in episodes if ep["links"]]
+    archived = [ep for ep in episodes if not ep["links"]]
     body = f"""
 <h1>Episodes</h1>
-<p class="sub">{len(episodes)} so far. Each page carries the research notes the
+<p class="sub">{len(live)} to watch. Each page carries the research notes the
    video was written from, including the limits.</p>
 <ul class="cards">
-{"".join(cards)}
+{_episode_cards(live, notes)}
+</ul>
+"""
+    if archived:
+        body += f"""
+<h2>Archive</h2>
+<p class="sub">{len(archived)} earlier episodes on psychology and behavioural
+   science. The videos are no longer public; the research notes stay here.</p>
+<ul class="cards">
+{_episode_cards(archived, notes)}
 </ul>
 """
     return page(f"Episodes — {SITE_NAME}", "Every Between Subjects episode, with sources.", body)
@@ -304,7 +322,7 @@ def build_home(episodes: list[dict], notes: dict) -> str:
   <ul class="cards">
 {"".join(latest)}
   </ul>
-  <p><a href="episodes.html">All {len(episodes)} episodes &rarr;</a></p>
+  <p><a href="episodes.html">All {sum(1 for e in episodes if e["links"])} episodes &rarr;</a></p>
 </section>
 """
     return page(SITE_NAME, TAGLINE, body)
@@ -356,8 +374,8 @@ def build_method(episodes: list[dict]) -> str:
    texture with no claim to being a real place. No image on this channel is
    presented as documentary footage of the research it accompanies. Everything
    that matters is in the words.</p>
-<p>Publishing to {len(episodes)} episodes&rsquo; worth of accounts is handled by
-   an in-house tool, which is what the <a href="terms.html">terms</a> and
+<p>Publishing is handled by an in-house tool, which is what the
+   <a href="terms.html">terms</a> and
    <a href="privacy.html">privacy policy</a> describe. It posts only to accounts
    this channel owns.</p>
 """
@@ -377,8 +395,10 @@ def build_about(episodes: list[dict]) -> str:
 
 <p>The channel covers the studies everyone has heard of, and the gap between
    what they found and what they are quoted as finding. There are
-   {len(episodes)} episodes so far, published to YouTube and TikTok.
-   Every one of them has a page here with its sources and its limits.</p>
+   {sum(1 for e in episodes if e["links"])} episodes on YouTube and TikTok, and
+   {sum(1 for e in episodes if not e["links"])} earlier ones on psychology and
+   behavioural science whose videos are no longer public. Every episode, current
+   or archived, has a page here with its sources and its limits.</p>
 
 <h2>Where to watch</h2>
 {channel_links()}
